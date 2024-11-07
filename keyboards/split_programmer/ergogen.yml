@@ -1,0 +1,97 @@
+units:
+  ku: u
+  ou: u + 2
+points:
+  zones:
+    matrix:
+      anchor:
+      columns:
+        outer:          
+          rows.bottomfunc.skip: true
+          key:
+            width: 1.5u
+        pinky:
+          key.spread: 1.25u
+        ring:        
+          key.origin: [-12, -19]
+          key.stagger: 12
+        middle:
+          key.stagger: 8
+        index:
+          rows.bottomfunc.skip: true
+          key.stagger: -8
+        inner:
+          rows.bottomfunc.skip: true
+          key.stagger: -3
+      rows:
+        bottomfunc:
+        bottomalpha:
+        home:
+        topalpha:
+        numeric:
+    functoprow:
+      anchor:
+        ref: matrix_outer_numeric
+        shift: [-9, 39]
+      columns:
+        1:
+        2:
+        3:
+        4:
+        5:
+        6:
+        7:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottomalpha
+        shift: [-7, -18]        
+      columns:
+        near:          
+          key.shift: [0,-5]
+          key.splay: -30
+        home:
+          key.height: 1.5u
+          key.spread: 21.25
+          key.splay: 0
+          key.origin: [-11.75, -9]
+        far:
+          key.height: 1.5u
+          key.spread: 21.25
+          key.splay: 0
+          key.origin: [-9.5, -9]
+      rows:
+        thumb:
+  mirror:
+    ref: matrix_pinky_home
+    distance: 273.7529778
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      bound: true
+      size: [ku, ku]
+  keys:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [ku-0.5, ku-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: thumbfan_far_thumb
+          shift: [15,-15]
+        - ref: matrix_pinky_bottomfunc
+          shift: [-12,-10]          
+        - ref: matrix_outer_bottomalpha
+          shift: [-12,-10]
+        - ref: functoprow_1
+          shift: [-12, 12]
+        - ref: functoprow_7
+          shift: [12, 12]
+        - ref: thumbfan_far_thumb
+          shift: [10,25]
+  combo:
+    - name : board
+    - operation: subtract
+      name: keys
