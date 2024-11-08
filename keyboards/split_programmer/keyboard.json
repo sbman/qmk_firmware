@@ -7,7 +7,7 @@
 		"lto": true
 	},
     "processor": "RP2040",
-    "diode_direction": "COL2ROW",
+    "diode_direction": "ROW2COL",
     "features": {
         "bootmagic": true,
         "command": false,
@@ -15,7 +15,21 @@
         "extrakey": true,
         "mousekey": false,
         "nkro": true,
-		"oled": false
+		"oled": false,
+		"rgb_matrix": true
+    },
+    "rgb_matrix": {
+        "center_point": [133, 54],
+        "driver": "ws2812",
+        "layout": [
+            {"matrix": [0, 2], "x": 61, "y": 21, "flags": 4},
+            {"matrix": [0, 1], "x": 41, "y": 21, "flags": 4}
+        ],
+        "split_count": [2,2]
+    },
+    "ws2812": {
+        "driver": "vendor",
+        "pin": "GP29"
     },
     "matrix_pins": {
         "cols": ["GP2", "GP3", "GP4", "GP5"],
@@ -61,7 +75,7 @@
                 {"matrix": [3, 3], "x": 3, "y": 3},
                 {"matrix": [4, 0], "x": 4, "y": 0},
                 {"matrix": [4, 1], "x": 4, "y": 1},
-                {"matrix": [4, 2], "x": 4, "y": 2},				
+                {"matrix": [4, 2], "x": 4, "y": 2},
                 {"matrix": [4, 3], "x": 4, "y": 3},
                 {"matrix": [5, 0], "x": 5, "y": 0},
                 {"matrix": [5, 1], "x": 5, "y": 1},
